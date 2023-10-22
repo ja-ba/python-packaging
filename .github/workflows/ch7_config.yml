@@ -63,9 +63,9 @@ jobs:
       matrix:
         python:
           - version: "3.10"
-            toxenv: "python39"
-          - version: "3.9"
             toxenv: "python310"
+          - version: "3.9"
+            toxenv: "python39"
     steps:
       - uses: actions/checkout@v3
 
