@@ -1,6 +1,7 @@
 import sys
 import pytest
 from termcolor import colored
+
 # from imppkg import harmonic_mean
 from imppkg.harmony import main
 
