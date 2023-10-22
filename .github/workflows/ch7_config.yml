@@ -20,3 +20,37 @@ jobs:
       - name: Run black
         run: tox -e format
         working-directory: "Chapter 6"
+
+  lint:
+    name: Lint code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4.0.0
+        with:
+          python-version: "3.10"
+
+      - name: Install tox
+        run: python -m pip install tox
+
+      - name: Run lint
+        run: tox -e lint
+        working-directory: "Chapter 6"
+
+  typecheck:
+    name: Typecheck code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4.0.0
+        with:
+          python-version: "3.10"
+
+      - name: Install tox
+        run: python -m pip install tox
+
+      - name: Run typecheck
+        run: tox -e typecheck
+        working-directory: "Chapter 6"
