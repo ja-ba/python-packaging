@@ -104,7 +104,7 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          path: "Chapter 6"/wheels/*.whl # Update to match root of package
+          path: ./"Chapter 6"/wheels/*.whl # Update to match root of package
 
 
   build_source_dist:
