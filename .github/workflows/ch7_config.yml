@@ -19,7 +19,7 @@ jobs:
 
       - name: Run black
         run: tox -e format
-        working-directory: "Chapter 6"
+        working-directory: "Chapter 7"
 
   lint:
     name: Lint code
@@ -36,7 +36,7 @@ jobs:
 
       - name: Run lint
         run: tox -e lint
-        working-directory: "Chapter 6"
+        working-directory: "Chapter 7"
 
   typecheck:
     name: Typecheck code
@@ -53,7 +53,7 @@ jobs:
 
       - name: Run typecheck
         run: tox -e typecheck
-        working-directory: "Chapter 6"
+        working-directory: "Chapter 7"
 
 
   test:
@@ -78,7 +78,7 @@ jobs:
 
       - name: Run pytest
         run: tox -e ${{ matrix.python.toxenv }}
-        working-directory: "Chapter 6"
+        working-directory: "Chapter 7"
 
 
   build_wheels:
@@ -100,11 +100,11 @@ jobs:
 
       - name: Build wheels
         run: python -m cibuildwheel --output-dir wheels
-        working-directory: "Chapter 6"
+        working-directory: "Chapter 7"
 
       - uses: actions/upload-artifact@v3
         with:
-          path: ./"Chapter 6"/wheels/*.whl # Update to match root of package
+          path: ./"Chapter 7"/wheels/*.whl # Update to match root of package
 
 
   build_source_dist:
@@ -122,8 +122,8 @@ jobs:
 
       - name: Run build
         run: python -m build --sdist
-        working-directory: "Chapter 6"
+        working-directory: "Chapter 7"
 
       - uses: actions/upload-artifact@v3
         with:
-          path: ./"Chapter 6"/*.tar.gz
+          path: ./"Chapter 7"/*.tar.gz
