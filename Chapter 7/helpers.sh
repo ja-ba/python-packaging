@@ -35,3 +35,7 @@ for _ in range(1_000_000)]' 'harmonic_mean(nums)'
 pip install twine
 pyproject-build --sdist
 twine upload -r testpypi dist/*
+<<<<<<< HEAD
+=======
+# "test.pypi token:" pypi-AgENdGVzdC5weXBpLm9yZwIkZmI2YmI4ODktMjBlNC00OWMyLWJhZTktMjc0YzUwYTE1OWUwAAIfWzEsWyJwdWJweXBhY2staGFybW9ueS1qYS1iYSJdXQACLFsyLFsiZDZmMGNlZjgtOTQyMS00YjJkLTg5YWItOTVmNGUwNjE1N2Y0Il1dAAAGIMrhPmi6_HBiZqfVhq9of1a3XmCGU_y-i0UH9kNjML4o
+>>>>>>> bcc5158ae8331e176e1d41f70b42f977ff390741
