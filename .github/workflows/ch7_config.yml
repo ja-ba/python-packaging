@@ -19,7 +19,7 @@ jobs:
 
       - name: Run black
         run: tox -e format
-        working-directory: "Chapter 7"
+        working-directory: Chapter7
 
   lint:
     name: Lint code
@@ -36,7 +36,7 @@ jobs:
 
       - name: Run lint
         run: tox -e lint
-        working-directory: "Chapter 7"
+        working-directory: Chapter7
 
   typecheck:
     name: Typecheck code
@@ -53,7 +53,7 @@ jobs:
 
       - name: Run typecheck
         run: tox -e typecheck
-        working-directory: "Chapter 7"
+        working-directory: Chapter7
 
 
   test:
@@ -78,7 +78,7 @@ jobs:
 
       - name: Run pytest
         run: tox -e ${{ matrix.python.toxenv }}
-        working-directory: "Chapter 7"
+        working-directory: Chapter7
 
 
   build_wheels:
@@ -100,11 +100,11 @@ jobs:
 
       - name: Build wheels
         run: python -m cibuildwheel --output-dir wheels
-        working-directory: "Chapter 7"
+        working-directory: Chapter7
 
       - uses: actions/upload-artifact@v3
         with:
-          path: ./"Chapter 7"/wheels/*.whl # Update to match root of package
+          path: ./Chapter7/wheels/*.whl # Update to match root of package
 
 
   build_source_dist:
@@ -123,16 +123,16 @@ jobs:
 
       - name: Run build
         run: python -m build --sdist
-        working-directory: "Chapter 7"
+        working-directory: Chapter7
 
       - name: Show directory
-        run: ls "Chapter 7"/dist
+        run: ls Chapter7/dist
 
       - name: Show directory2
         run: ls . 
 
       - name: Copy file
-        run: cp "Chapter 7"/dist/*.tar.gz .
+        run: cp Chapter7/dist/*.tar.gz .
 
       - uses: actions/upload-artifact@v3
         with:
@@ -156,11 +156,11 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: artifact
-          path: ./"Chapter 7"/dist # Update to match root of package
+          path: ./Chapter7/dist # Update to match root of package
 
       - uses: pypa/gh-action-pypi-publish@v1.5.0
         with:
           repository-url: https://test.pypi.org/legacy/
           user: __token__
           password: ${{ secrets.PYPI }}
-          packages_dir: ./"Chapter 7"/dist/ # You don't need this in your package
+          packages_dir: ./Chapter7/dist/ # You don't need this in your package
