@@ -37,4 +37,5 @@ pyproject-build --sdist
 twine upload -r testpypi dist/*
 
 
-#
+#Preview documentation as http server
+python -m http.server -d docs/_build/ 9876
